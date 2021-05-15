@@ -15,20 +15,34 @@ class NavTab {
 	}
 
 	public function render() {
-		return (new DOMEl("ul"))
-			->addClass(["nav","nav-tabs"])
-			->addChildren(array_map(function($label) {
-					return (new DOMEl("li"))
-						->addClass("nav-item")
-						->attr("role","presentation")
-						->addChild(
-							(new Link($label,"#".md5($label)))
-							->addClass("nav-link")
-							->attr("data-bs-toggle","tab")
-							->addClass(($this->tabs[$label]["active"]?"active":""))
-						)
+		return (new DOMEl("div"))->addChild(
+				(new DOMEl("ul"))
+				->addClass(["nav","nav-tabs"])
+				->addChildren(array_map(function($label) {
+						return (new DOMEl("li"))
+							->addClass("nav-item")
+							->attr("role","presentation")
+							->addChild(
+								(new Link($label,"#".md5($label)))
+								->addClass("nav-link")
+								->attr("data-bs-toggle","tab")
+								->addClass(($this->tabs[$label]["active"]?"active":""))
+							)
+							;
+					},array_keys($this->tabs))
+				)
+			)->addChild(
+				(new DOMEl("div"))
+				->addClass("tab-content")
+				->addChildren(array_map(function($label){
+						return (new DOMEl("div"))
+							->addClass(["tab-pane","fade"])
+							->attr("id",md5($label))
+							->attr("role","tabpanel")
 						;
-				},array_keys($this->tabs))
+					},array_keys($this->tabs))
+				)
+
 			)
 		;
 	}
