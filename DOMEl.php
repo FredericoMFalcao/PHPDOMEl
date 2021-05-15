@@ -41,6 +41,8 @@ class DOMEl {
   public function setText(string $text) { $this->innerText = htmlspecialchars($text); return $this; }
 
   public function render() {
+	if ($this->xml_tag == "br") return "<br/>";
+	
 	return "<{$this->xml_tag}"
 		.array_reduce(array_keys($this->attributes), function($c,$i){return $c." ".$i."=\"".$this->attributes[$i]."\"";},"")
 		.">"
