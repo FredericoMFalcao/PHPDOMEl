@@ -9,6 +9,7 @@ class NavTab {
 
 	public function addTab(string $label, DOMEl $content) {
 		$this->tabs[$label] = $content;
+		return $this;
 	}
 
 	public function render() {
