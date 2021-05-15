@@ -20,9 +20,13 @@ class Table {
 				)
 			)
 			->addChild( (new DOMEl("tbody"))
-				->addChild( (new DOMEl("tr"))
-					->addChildren( array_map(function($o) {return (new DOMEl("td"))->setText($o);},$this->headerCols) )
-				)
+				->addChildren( array_map(function($row) {
+					return (new DOMEl("tr"))->addChildren(
+						array_map(function($cell) {
+							return (new DOMEl("td"))->setText($cell);
+						},$row)
+					);
+				},$this->data))
 			)
 		;
 	}
