@@ -34,9 +34,6 @@ class Website {
 		$this->html->addChild($this->head);
 		$this->html->addChild($this->body);
 
-		$this->html->addChild(
-			(new DOMEl("body"))
-		);
 
 		return $this->html;
 	}
