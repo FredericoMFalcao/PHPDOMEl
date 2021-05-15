@@ -8,5 +8,8 @@
             "email": "fredericomfalcao@hotmail.com"
         }
     ],
-    "require": {}
+    "require": {},
+    "autoload": {
+       "psr-0": { "": "./" }
+    }
 }
