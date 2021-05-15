@@ -39,7 +39,7 @@ class NavTab {
 							->addClass(["tab-pane","fade"])
 							->attr("id","_".md5($label))
 							->attr("role","tabpanel")
-							->addClass(($this->tabs[$label]["active"]?"active":""))
+							->addClass(($this->tabs[$label]["active"]?["active","show"]:""))
 							->addChild($this->tabs[$label]["content"])
 						;
 					},array_keys($this->tabs))
