@@ -7,8 +7,10 @@ class NavTab {
 
 	private $tabs = [];
 
-	public function addTab(string $label, DOMEl $content) {
-		$this->tabs[$label] = $content;
+	public function addTab(string $label, DOMEl $content, bool $active = -1) {
+		if ($active == -1 && empty($this->tabs)) $active = 1;
+		if ($active == -1 && !empty($this->tabs)) $active = 0;
+		$this->tabs[$label] = ["active"=>$active, "content"=>$content];
 		return $this;
 	}
 
@@ -23,6 +25,7 @@ class NavTab {
 							(new Link($label,"#".md5($label)))
 							->addClass("nav-link")
 							->attr("data-bs-toggle","tab")
+							->addClass(($this->tabs[$label]["active"]?"active":""))
 						)
 						;
 				},array_keys($this->tabs))
