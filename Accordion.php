@@ -20,7 +20,7 @@ class Accordion {
 						(new DOMEl("h2"))
 						->addClass("accordion-header")
 						->addChild( (new DOMEl("button"))
-								->addClass("accordion-button")
+								->addClass(["accordion-button","collapsed"])
 								->attr("type","button")
 								->attr("data-bs-toggle","collapse")
 								->attr("data-bs-target","#_".md5($content))
@@ -28,7 +28,7 @@ class Accordion {
 						)
 					)->addChild(
 						(new DOMEl("div"))
-						->addClass(["accordion-collapse","collapse","show"])
+						->addClass(["accordion-collapse","collapse"])
 						->attr("data-bs-parent","#_".$md5OfWholeAccordion)
 						->addChild(
 							( new DOMEl("div") )
