@@ -4,8 +4,8 @@ class Accordion {
 	
 	private $items = [];
 
-	public function addAccordionItems(array $items) { foreach($items as $item) call_user_func_array([$this,"addAccordionItem"],$item); return $this; }
-	public function addAccordionItem(string $label, DOMEl $content)  { $this->items[] = ["label"=>$label, "content" => $content]; return $this;}
+	public function addChildren(array $items) { foreach($items as $item) call_user_func_array([$this,"addChild"],$item); return $this; }
+	public function addChild(string $label, DOMEl $content)  { $this->items[] = ["label"=>$label, "content" => $content]; return $this;}
 	public function asDOMEl() {
 		$md5OfWholeAccordion = md5(json_encode($this->items));
 		return (new DOMEl("div"))
