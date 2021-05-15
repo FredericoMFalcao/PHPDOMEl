@@ -29,7 +29,7 @@ class Accordion {
 					)->addChild(
 						(new DOMEl("div"))
 						->addClass(["accordion-collapse","collapse"])
-						->attr("id",md5($content))
+						->attr("id","_".md5($content))
 						->attr("data-bs-parent","#_".$md5OfWholeAccordion)
 						->addChild(
 							( new DOMEl("div") )
