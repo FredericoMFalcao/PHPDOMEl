@@ -38,7 +38,7 @@ class DOMEl {
 
   public function addChild(DOMEl $child) { $this->children[] = $child; return $this; }
 
-  public function setText(string $text) { $this->innerText = $text; return $this; }
+  public function setText(string $text) { $this->innerText = htmlspecialchars($text); return $this; }
 
   public function render() {
 	return "<{$this->xml_tag}"
