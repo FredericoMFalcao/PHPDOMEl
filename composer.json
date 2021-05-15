@@ -1,0 +1,12 @@
+{
+    "name": "fredericomfalcao/phpdom-el",
+    "description": "A simple framework to generate a DOM elements in Object Oriented Style (including Bootstrap).",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Frederico Falcao",
+            "email": "fredericomfalcao@hotmail.com"
+        }
+    ],
+    "require": {}
+}
