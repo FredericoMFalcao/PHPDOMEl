@@ -12,8 +12,8 @@ class Accordion {
 			->addClass("accordion")
 			->attr("id","_".$md5OfWholeAccordion)
 			->addChildren(
-				array_map(function($item) { 
-					extract($item); global $md5OfWholeAccordion;
+				array_map(function($item) use ($md5OfWholeAccordion) { 
+					extract($item); 
 					return (new DOMEl("div"))
 					->addClass("accordion-item")
 					->addChild(
