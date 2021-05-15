@@ -28,6 +28,12 @@ class Website {
 		return $this;
 	}
 
+	public function bodyAddClass(string|array $classes) {
+		$this->body->addClass($classes);
+		return $this;
+	}
+	public function bodyAddChild($child) {$this->body->addChild($child); return $this; }
+
 
 
 	public function render() {
