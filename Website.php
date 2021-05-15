@@ -33,6 +33,10 @@ class Website {
 		return $this;
 	}
 	public function bodyAddChild($child) {$this->body->addChild($child); return $this; }
+	public function addCustomCSSCode(string $cssCode) {
+		$this->head->addChild( (new DOMEl("style"))->setRawText($cssCode) );
+		return $this;
+	}
 
 
 
