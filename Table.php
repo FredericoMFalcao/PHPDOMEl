@@ -6,7 +6,7 @@ class Table {
 	private $headerCols;
 
 	public function addAssocArray(array $data) {
-		$this->headerCols = array_keys($data);
+		$this->headerCols = array_keys($data[0]);
 		$this->data = $data; 
 		return $this;
 	}
