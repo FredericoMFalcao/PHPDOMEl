@@ -11,7 +11,7 @@ class Table {
 		return $this;
 	}
 
-	public function render() {
+	public function asDOMEl() {
 		return (new DOMEl("table"))
 			->addClass("table")
 			->addChild( (new DOMEl("thead"))
