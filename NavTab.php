@@ -7,6 +7,7 @@ class NavTab {
 
 	private $tabs = [];
 
+	public function addTabs(array $tabs) { foreach($tabs as $tab) call_user_func_array([$this,"addTab"],$tab); return $this;}
 	public function addTab(string $label, DOMEl $content, int $active = -1) {
 		if ($active == -1 && empty($this->tabs)) $active = 1;
 		if ($active == -1 && !empty($this->tabs)) $active = 0;
