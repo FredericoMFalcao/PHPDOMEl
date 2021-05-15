@@ -23,7 +23,7 @@ class Table {
 				->addChildren( array_map(function($row) {
 					return (new DOMEl("tr"))->addChildren(
 						array_map(function($cell) {
-							return (new DOMEl("td"))->setText($cell);
+							return (new DOMEl("td"))->addChild($cell);
 						},$row)
 					);
 				},$this->data))

@@ -36,7 +36,13 @@ class DOMEl {
 	return $this;
   }
   public function addChildren(array $children) {foreach($children as $child) $this->addChild($child); return $this;}
-  public function addChild(DOMEl $child) { $this->children[] = $child; return $this; }
+  public function addChild(DOMEl|string $child) { 
+	if (is_string($child)) 
+		$this->setText($child);
+	else
+		$this->children[] = $child; 
+	return $this; 
+  }
 
   public function setRawText(string $text) { $this->innerText = $text; return $this; }
   public function setText(string $text) { $this->innerText = htmlspecialchars($text); return $this; }
