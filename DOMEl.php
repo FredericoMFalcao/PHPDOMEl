@@ -1,3 +1,8 @@
 <?php
 
-echo "HELLO"!
+
+class DOMEl {
+
+
+  public function __construct() { echo "HELLO!"; }
+}
