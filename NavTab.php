@@ -23,7 +23,7 @@ class NavTab {
 							->addClass("nav-item")
 							->attr("role","presentation")
 							->addChild(
-								(new Link($label,"#".md5($label)))
+								(new Link($label,"#"."_".md5($label)))
 								->addClass("nav-link")
 								->attr("data-bs-toggle","tab")
 								->addClass(($this->tabs[$label]["active"]?"active":""))
@@ -37,7 +37,7 @@ class NavTab {
 				->addChildren(array_map(function($label){
 						return (new DOMEl("div"))
 							->addClass(["tab-pane","fade"])
-							->attr("id",md5($label))
+							->attr("id","_".md5($label))
 							->attr("role","tabpanel")
 						;
 					},array_keys($this->tabs))
